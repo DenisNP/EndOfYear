@@ -1,0 +1,22 @@
+<html style="width: 100vw; height: 100vh; margin: 0; padding: 0;">
+    <body style="width: 100vw; height: 100vh; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center;">
+        <div class="time" style="font-size: 30px;"><span id="td" style="font-size: 40px; font-weight: bold;"></span> seconds till the end of the year</div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", ready);
+
+        function ready() {
+            const eoy = Date.UTC((new Date()).getFullYear() + 1, 0, 1, 0, 0, 0, 0);
+            const now = new Date().getTime();
+            const diff = Math.floor((eoy - now) / 1000);
+            document.getElementById("td").innerText = diff;
+
+            // setTimeout(refresh, 1000);
+        }
+
+        
+        function refresh() {
+            location.reload();
+        }
+    </script>
+</html>
